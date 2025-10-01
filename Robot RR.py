@@ -17,8 +17,8 @@ print("\nSymbolic example:")
 q1, q2 = sp.symbols('q1 q2')
 l1, l2 = sp.symbols('l1 l2')
 dh_params_sym = [
-    [q1, 0, l1, 0],
-    [q2, 0, l2, 0],
+    [q1, 0, l1, 0],   # se hice el cambio de las variables para que coindican con los valores de la matriz de un robot RR
+    [q2, 0, l2, 0],   # se cambiaron tanto los ángulos q1, q2, las distancias a se quedaron en 0, la distancia l se cambio tanto l1 y l2 y el angulo alpha se agino el valor de 0
 ]
 H_sym_class = ForwardKinematicsDH.symbolic(dh_params_sym)
 print("End-effector transformation matrix:")
