@@ -2,6 +2,12 @@ import numpy as np
 import sympy as sp
 from forward_kinematics_dh_class import ForwardKinematicsDH
 
+# Función para limpiar valores numéricos cercanos a cero
+def limpiar_ceros(matriz, umbral=1e-10):
+    matriz_limpia = np.where(np.abs(matriz) < umbral, 0.0, matriz)
+    return matriz_limpia
+
+
 # Numeric example: 2-joint planar robot (all revolute, a1=1, a2=1)
 print("Numeric example:")
 dh_params = [
@@ -10,15 +16,17 @@ dh_params = [
     [np.pi/4, 0, 1, 0],
 ]
 H_class = ForwardKinematicsDH.numeric(dh_params)
+H_class_limpia = limpiar_ceros(H_class)
 print("End-effector transformation matrix:")
-print(H_class)
+print(H_class_limpia)
+
 
 # symbolic example: 2-joint planar robot 
 print("\nSymbolic example:")
 q1, q2, q3= sp.symbols('q1 q2 q3')
 l1, l2, l3 = sp.symbols('l1 l2 l3')
 dh_params_sym = [
-    [q1, 0, l1, np.pi/2],   # se hizo el cambio de las variables para que coincidan con los valores de la matriz para un robot RR
+    [q1, 0, l1, sp.pi/2],   # se hizo el cambio de las variables para que coincidan con los valores de la matriz para un robot RR
     [q2, 0, l2, 0],   # se cambiaron tanto los ángulos q1, q2, las distancias a se quedaron en 0, la distancia l se cambio tanto l1 y l2 y el angulo alpha se agino el valor de 0
     [q3, 0, l3, 0],
 ]
