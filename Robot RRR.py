@@ -7,6 +7,7 @@ print("Numeric example:")
 dh_params = [
     [np.pi/4, 0, 1, 0],
     [np.pi/4, 0, 1, 0],
+    [np.pi/4, 0, 1, 0],
 ]
 H_class = ForwardKinematicsDH.numeric(dh_params)
 print("End-effector transformation matrix:")
@@ -14,11 +15,12 @@ print(H_class)
 
 # symbolic example: 2-joint planar robot 
 print("\nSymbolic example:")
-q1, q2 = sp.symbols('q1 q2')
-l1, l2 = sp.symbols('l1 l2')
+q1, q2, q3= sp.symbols('q1 q2 q3')
+l1, l2, l3 = sp.symbols('l1 l2 l3')
 dh_params_sym = [
-    [q1, 0, l1, 0],   # se hizo el cambio de las variables para que coincidan con los valores de la matriz para un robot RR
+    [q1, 0, l1, np.pi/2],   # se hizo el cambio de las variables para que coincidan con los valores de la matriz para un robot RR
     [q2, 0, l2, 0],   # se cambiaron tanto los ángulos q1, q2, las distancias a se quedaron en 0, la distancia l se cambio tanto l1 y l2 y el angulo alpha se agino el valor de 0
+    [q3, 0, l3, 0],
 ]
 H_sym_class = ForwardKinematicsDH.symbolic(dh_params_sym)
 print("End-effector transformation matrix:")
