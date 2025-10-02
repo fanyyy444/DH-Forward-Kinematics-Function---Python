@@ -14,7 +14,7 @@ print("End-effector transformation matrix:")
 print(H_class)
 
 
-print("\nSymbolic example: SCARA robot")
+print("\nSymbolic example: SCARA robot")  #imprime texto especificando la matriz del robot SCARA
 q1, q2 = sp.symbols('q1 q2')         # Ángulos articulares
 l1, l2 = sp.symbols('l1 l2')         # Longitudes de eslabones
 d3 = sp.symbols('d3')                # Se define el desplzamiento como d3

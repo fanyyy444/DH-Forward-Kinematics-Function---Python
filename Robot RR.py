@@ -13,7 +13,7 @@ print("End-effector transformation matrix:")
 print(H_class)
 
 # symbolic example: 2-joint planar robot 
-print("\nSymbolic example:")
+print("\nSymbolic example: RR Robot") #imprime texto especificando la matriz del robot RR
 q1, q2 = sp.symbols('q1 q2')
 l1, l2 = sp.symbols('l1 l2')
 dh_params_sym = [

@@ -34,7 +34,7 @@ print(H_class_limpia)
 
 
 # symbolic example: 3-joint planar robot 
-print("\nSymbolic example:")
+print("\nSymbolic example: RRR Robot") #imprime texto especificando la matriz del robot RRR
 q1, q2, q3= sp.symbols('q1 q2 q3') #se agrego el simbolo para q3
 l1, l2, l3 = sp.symbols('l1 l2 l3')  #se agrego el simbolo para l3
 dh_params_sym = [
