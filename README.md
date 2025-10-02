@@ -28,9 +28,27 @@ El código base proporcionado (`example2.py`) fue modificado y extendido para ad
 - Se implementaron funciones de limpieza numérica para mejorar la legibilidad de las matrices finales, eliminando residuos numéricos cercanos a cero.  
 
 ### Parámetros definidos por robot
-- **Robot RR**: dos articulaciones rotacionales `(q1, q2)` y dos longitudes de eslabón `(l1, l2)`. Se consideraron ángulos de torsión `αi = 0` dado que el movimiento es planar.  
-- **Robot RRR**: se añadió una tercera articulación rotacional `(q3)` y una longitud adicional `(l3)`. Se amplió la multiplicación de matrices y se mantuvo la consistencia con el modelo planar extendido.  
-- **Robot SCARA**: se incorporó una articulación prismática representada por el desplazamiento `d3`. Además, se asignó `α2 = π` en el segundo eslabón según la tabla DH del modelo SCARA y se consideró `θ3 = 0` para la articulación prismática.  
+#### Robot RR
+Se definieron dos articulaciones rotacionales (q₁, q₂) y dos longitudes de eslabón (l₁, l₂).
+Se asignaron valores de torsión αᵢ = 0, ya que el movimiento se desarrolla en el plano.
+
+![Esquema Robot RR](img/RobotRR.png)
+
+---
+
+#### Robot RRR
+Se agregó una tercera articulación rotacional (q₃) y una longitud adicional (l₃).
+Se extendió la lógica de multiplicación de matrices para incluir el tercer eslabón.
+
+![Esquema Robot RRR](img/RobotRRR.png)
+
+---
+
+#### Robot SCARA
+Se incorporó una articulación prismática representada por el desplazamiento d₃.
+Se asignó una torsión de α₂ = π en el segundo eslabón, conforme a la tabla DH del modelo SCARA.
+
+![Esquema Robot SCARA](img/RobotSCARA.png)
 
 ### Objetivo de la implementación
 El objetivo principal fue construir matrices de transformación homogénea simbólicas que describieran con precisión la posición y orientación del efector final de cada robot a partir de sus parámetros articulares. Asimismo, se buscó validar los modelos teóricos mediante la comparación con resultados de referencia en literatura especializada.
