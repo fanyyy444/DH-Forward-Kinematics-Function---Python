@@ -27,7 +27,7 @@ dh_params_sym = [
 
 H_sym_class = ForwardKinematicsDH.symbolic(dh_params_sym)
 
-#Simñ¿plica la matriz para que se vea los más parecido al resultado original
+#Simplifica la matriz para que se vea los más parecida al resultado original
 H_sym_simplificada = sp.simplify(H_sym_class)
 
 print("End-effector transformation matrix (simplificada):")
