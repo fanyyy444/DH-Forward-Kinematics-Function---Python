@@ -40,12 +40,28 @@ El objetivo principal fue construir matrices de transformación homogénea simb�
 ## Resultados
 
 ### Robot RR
+**Resultado obtenido en el programa:**
+![Matriz RR - Programa](img/RobotRR_codigo.png)
+
+**Referencia del libro:**
+![Matriz RR - Libro](img/RobotRR_libro.png)
+
 La matriz obtenida en el programa coincidió exactamente con la referencia bibliográfica. Tanto la parte rotacional como la columna de traslación resultaron equivalentes, confirmando la correcta implementación de la cinemática directa para un manipulador planar de dos grados de libertad.
 
 ### Robot RRR
+**Resultado obtenido en el programa:**
+![Matriz RR - Programa](img/RobotRRR_codigo.png)
+
+**Referencia del libro:**
+![Matriz RR - Libro](img/RobotRRR_libro.png)
 La matriz generada en el programa presentó la misma estructura que la referencia, tanto en la parte rotacional como en la traslación. El único detalle adicional fue la inclusión explícita de la longitud `l1` en la proyección sobre el eje `x,y`, lo cual corresponde al primer eslabón fijo en la dirección de `q1`. Esta diferencia responde a la convención empleada en la parametrización, pero no afecta la validez de la formulación.
 
 ### Robot SCARA
+**Resultado obtenido en el programa:**
+![Matriz RR - Programa](img/RobotSCARA_codigo.png)
+
+**Referencia del libro:**
+![Matriz RR - Libro](img/RobotSCARA_libro.png)
 En este caso, la matriz obtenida en la programación conserva la estructura ortonormal propia de un robot SCARA: una rotación en el plano `x,y` dada por `Rz(q1+q2)`, la inversión del eje `z` con el valor `-1`, y la traslación compuesta por las longitudes `l1` y `l2` en el plano horizontal y el desplazamiento prismático `-d3` en el eje vertical.  
 En la referencia aparecen términos combinados de tipo `(cos + sen)`, pero el análisis confirma que la matriz obtenida en el programa refleja con mayor fidelidad la formulación canónica de la cinemática directa del SCARA.
 
