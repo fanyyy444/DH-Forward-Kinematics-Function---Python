@@ -7,7 +7,7 @@ from forward_kinematics_dh_class import ForwardKinematicsDH
 
 def limpiar_ceros(matriz, umbral=1e-10):
     """
-    Convierte a cero cualquier valor absoluto menor que el umbral.
+    Convierte a cero cualquier valor absoluto menor que el umbral
     Parámetros:
         matriz: matriz tipo numpy
         umbral: valor mínimo para considerar como cero
